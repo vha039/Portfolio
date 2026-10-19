@@ -273,7 +273,7 @@
         : [
             { label: "Måned" },
             { label: "Fraværsdager", precision: 0 },
-            { label: "Eksponerte dager", precision: 0 },
+            { label: "Eksponerte dager", precision: 0, term: "eksponerte-dager" },
             { label: "Fravær", precision: 2, unit: "%" },
           ];
     const rows = sel.map((period) => {
@@ -519,7 +519,7 @@
     return {
       title: "Sammenligning av et testpar",
       columns: [
-        { label: "Nøkkel" },
+        { label: "Nøkkel", term: "observasjonsnokkel" },
         { label: "Referanse (rå)", precision: 8 },
         { label: "Kandidat (rå)", precision: 8 },
         {
@@ -532,6 +532,7 @@
       ],
       rows,
       summary: [cmp.status + ".", cmp.comparable + " tallpar sammenlignet."],
+      summaryTerm: "testpar-samsvar",
       detail: cmp.detail,
       status: cmp.status,
       comparison: cmp,

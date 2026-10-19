@@ -510,6 +510,7 @@
       if (removable) {
         const button = el("button", "Fjern");
         button.type = "button";
+        button.setAttribute("aria-label", c ? "Fjern «" + title(c) + "»" : "Fjern ugyldig lagret visning");
         button.addEventListener("click", () => {
           const same = (x) =>
             c

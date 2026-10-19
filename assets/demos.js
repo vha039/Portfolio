@@ -69,6 +69,8 @@
         "demo-summary",
       ),
     );
+    if (result.summaryTerm && window.R8Terms)
+      resultRoot.querySelector(".demo-summary").append(window.R8Terms.createButton(result.summaryTerm));
     if (result.detail) resultRoot.append(el("p", result.detail, "demo-detail"));
     const chart = el("div");
     chart.dataset.chart = "";
@@ -85,6 +87,7 @@
     result.columns.forEach((col) => {
       const th = el("th", col.label || col);
       th.scope = "col";
+      if (col.term && window.R8Terms) th.append(window.R8Terms.createButton(col.term));
       tr.append(th);
     });
     head.append(tr);
