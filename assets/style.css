@@ -256,8 +256,14 @@ strong {
   font-size: 16px;
   color: var(--ink);
 }
+/* The language switch is not a section: a short rule sets it apart, and the underline stays reserved for "you are here". */
 .header-nav [data-language-switch] {
   color: var(--muted);
+  padding-left: 12px;
+  background: linear-gradient(var(--rule), var(--rule)) left center / 1px 1.2em no-repeat;
+}
+.header-nav [data-language-switch]:hover {
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 0.22em;
 }

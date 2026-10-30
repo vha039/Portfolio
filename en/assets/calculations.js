@@ -95,7 +95,8 @@ function create(copy) {
     const parts = String(v).split(",");
     if (parts.length !== 3)
       stop(("Give three whole-number weights, separated by commas."));
-    const res = parts.map((v) => int(v, 0, 100, ("The weight")));
+    // "45, 35, 20" is the natural way to type a list; spaces around each weight are ignored.
+    const res = parts.map((v) => int(v.trim(), 0, 100, ("The weight")));
     if (res.reduce((s, v) => s + v, 0) !== 100)
       stop(("The weights must add up to 100 percent."));
     return res;
@@ -165,7 +166,7 @@ function create(copy) {
       }
     }
     if (own(values, "fra") && values.fra > values.til)
-      errors.push(("The from period must come before or equal the to period."));
+      errors.push(("The start month cannot be after the end month."));
     return { values, errors };
   }
   function read(page, input) {

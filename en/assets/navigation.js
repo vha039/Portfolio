@@ -429,7 +429,7 @@ function words(q) {
   return normalize(q)
     .split(/\s+/)
     .filter(Boolean)
-    .map((word) => ({"ki":"ai","prognose":"forecast","avviklet":"decommissioning","avvikling":"decommissioning"})[word] || word);
+    .map((word) => ({"ki":"ai","prognose":"forecast","avviklet":"decommissioning","avvikling":"decommissioning","sykefravaer":"absence","utdanning":"education"})[word] || word);
 }
 function say(container, text) {
   const n = $(container.id + "-status");

@@ -95,7 +95,8 @@ function create(copy) {
     const parts = String(v).split(",");
     if (parts.length !== 3)
       stop(("Oppgi tre heltallsvekter, adskilt med komma."));
-    const res = parts.map((v) => int(v, 0, 100, ("Vekten")));
+    // "45, 35, 20" is the natural way to type a list; spaces around each weight are ignored.
+    const res = parts.map((v) => int(v.trim(), 0, 100, ("Vekten")));
     if (res.reduce((s, v) => s + v, 0) !== 100)
       stop(("Vektene må summere til 100 prosent."));
     return res;

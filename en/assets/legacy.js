@@ -105,7 +105,7 @@ try {
   location.replace(dest);
 } catch {
   warn(
-    ("This older link cannot be opened automatically. Use the links on the page to find the delivery or section."),
+    ("This older link cannot be opened automatically. Use the links on the page to find the deliverable or section."),
   );
 }
 })();
