@@ -256,6 +256,11 @@ strong {
   font-size: 16px;
   color: var(--ink);
 }
+.header-nav [data-language-switch] {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
 .header-nav a:is([aria-current="page"], .is-category) {
   color: var(--accent);
   text-decoration: underline;

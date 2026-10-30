@@ -6,7 +6,7 @@ if (location.protocol === "http:" || location.protocol === "https:") {
   for (const font of ["source-sans", "source-serif"]) {
     const link = document.createElement("link");
     link.rel = "preload";
-    link.href = "assets/fonts/" + font + ".woff2";
+    link.href = new URL("fonts/" + font + ".woff2", document.currentScript.src).href;
     link.as = "font";
     link.type = "font/woff2";
     link.crossOrigin = "anonymous";
