@@ -445,7 +445,7 @@ function results(q, container) {
   if (!index.length && tokens.length)
     return container
       .appendChild(el("li", ("Search is not available. ")))
-      .append(link(("Use the questions on the Find page."), "finn.html#sporsmal"));
+      .append(link(("Use the questions on the Search page."), "finn.html#sporsmal"));
   let found = index.filter(
     (r) =>
       typeof r.label === "string" &&
